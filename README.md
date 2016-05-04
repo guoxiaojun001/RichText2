@@ -20,7 +20,7 @@ Android.text.Html类的一个方法：
 [java] view plaincopyprint?
 public static Spanned fromHtml (String source)  
 可以将html代码转换为Spanned。
-[java] view plaincopyprint?
+
 html = "<h1>this is h1</h1>"  
         + "<p>This text is normal</p>"  
         + "<img src='https://www.google.com.hk/intl/zh-CN/images/logo_cn.png' />";  
@@ -34,7 +34,7 @@ textView.setText(html);
 public static Spanned fromHtml (String source, Html.ImageGetter imageGetter, Html.TagHandler tagHandler)
 其中Html.ImageGetter是一个接口，我们要实现此接口，在它的getDrawable(String source)方法中返回图片的Drawable对象才可以。
 修改后的代码：
-[java] view plaincopyprint?
+
 Spanned sp = Html.fromHtml(html, new Html.ImageGetter() {  
     @Override  
     public Drawable getDrawable(String source) {  
