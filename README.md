@@ -16,3 +16,5 @@ compile 'zhou.widget:richtext:1.0.1'
 ### 具体使用请查看demo
 引用
 http://git.oschina.net/zzhoujay/RichText
+
+![演示](http://git.oschina.net/uploads/images/2015/0721/172827_3339b62f_141009.png "演示")
