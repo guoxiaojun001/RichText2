@@ -17,15 +17,10 @@ extView是不只可以String的，我们平常用的给setText()方法传递Stri
 而CharSequence子类众多，其中有一个接口Spanned，即类似html的带标记的文本。我们可以用它来在TextView中显示html（自然，有很多html标记是不支持的，只支持一部分）。
 
 Android.text.Html类的一个方法：
-[java] view plaincopyprint?
+
 public static Spanned fromHtml (String source)  
 可以将html代码转换为Spanned。
 
-html = "<h1>this is h1</h1>"  
-        + "<p>This text is normal</p>"  
-        + "<img src='https://www.google.com.hk/intl/zh-CN/images/logo_cn.png' />";  
-Spanned sp = Html.fromHtml(html);  
-textView.setText(html);  
 
 显示效果：
 
@@ -54,9 +49,7 @@ Spanned sp = Html.fromHtml(html, new Html.ImageGetter() {
 textView.setText(sp);  
 看起来有些复杂，但其实只是fromHtml()的第二个参数是一个匿名类，用以图片的获取。
 其中
-[java] view plaincopyprint?
-is = (InputStream) new URL(source).getContent();  
-Drawable d = Drawable.createFromStream(is, "src");  
+
 用以通过图片的地址获取相应的Drawable实例。
 由于用到了网络资源的图片，所以要在Mainifest文件中加入权限：
 [html] view plaincopyprint?
@@ -64,4 +57,4 @@ Drawable d = Drawable.createFromStream(is, "src");
 修改后的运行结果：
 
 
-
+![演示](http://git.oschina.net/uploads/images/2015/0721/172827_3339b62f_141009.png "演示")
